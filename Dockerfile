@@ -2,8 +2,8 @@
 FROM openjdk:21
 
 # Copy the JAR package into the image
-ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} app.jar
+
+ADD targetJar/loan-0.0.1-SNAPSHOT.jar targetJar/app.jar
 
 # Expose the application port
 EXPOSE 9099
