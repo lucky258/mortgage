@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Mortgage Loans</title>
+</head>
+<body>
+<h1>Loans List</h1>
+<ul>
+    <li th:each="loan : ${loans}">
+        Loan No - <span th:text="${loan.loanNo}"></span><br>
+        Borrower First Name : <span th:text="${loan.firstName}"></span><br>
+        Borrower Last Name : <span th:text="${loan.lastName}"></span><br>
+        Phone No : <span th:text="${loan.phoneNo}"></span><br>
+        Property Address : <span th:each="add : ${loan.address}">
+        <span th:text="${add.city}"></span>, <span th:text="${add.state}"></span> - <span th:text="${add.pinCode}"></span>
+    </span><br>
+        ------------------------------------------------------
+    </li><br>
+</ul>
+</body>
+</html>
